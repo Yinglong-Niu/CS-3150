@@ -39,7 +39,7 @@ book::book(int ISBN,int page, string BookName,string Author,calendar pbdat){
     }
 
     string book::dispReturndate(){
-    	time_t result  = time(NULL);;
+    		time_t result  = time(NULL);
 		time_t after = result + 3600*24*30*2;
     	        char tp[11];
     	        strftime(tp,sizeof(tp),"%Y %m %d",localtime(&after));
