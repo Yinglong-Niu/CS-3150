@@ -8,14 +8,14 @@
 #include "book.h"
 
 book::book(){
-        ISBN=0;
+        ISBN=0;			// The default constructor initializes private variables
         BookName="NULL";
         Author="NULL";
         page = 0;
         pbdat;
         num=3;//Default setting, each book's number is 3.
     }
-book::book(int ISBN,int page, string BookName,string Author,calendar pbdat){
+book::book(int ISBN,int page, string BookName,string Author,calendar pbdat){	// The parameterized constructor initializes private variables
         this -> ISBN = ISBN;
         this -> page = page;
         this -> BookName = BookName;
@@ -23,22 +23,22 @@ book::book(int ISBN,int page, string BookName,string Author,calendar pbdat){
         this -> pbdat = pbdat;
         num=3;
     }
-    int book::getISBN(){return ISBN;}
-    string book::getBookName(){return BookName;}
-    string book::getAuthor(){return Author;}
-    calendar book::getPublishDate(){return pbdat;}
+    int book::getISBN(){return ISBN;}			// return ISN.
+    string book::getBookName(){return BookName;}	// return book name.
+    string book::getAuthor(){return Author;}		//return author name.
+    calendar book::getPublishDate(){return pbdat;}	// return book number
     int book::getNum(){return num;}
 
-    void book::setNum(int num){this->num=num;}
+    void book::setNum(int num){this->num=num;}		// set book number
 
-    string book::getCurrentTime(){
+    string book::getCurrentTime(){			// get current time
         time_t t = time(0);
         char tp[11];
         strftime(tp,sizeof(tp),"%Y %m %d",localtime(&t));
         return tp;
     }
 
-    string book::dispReturndate(){
+    string book::dispReturndate(){			// display reutn time
     		time_t result  = time(NULL);
 		time_t after = result + 3600*24*30*2;
     	        char tp[11];
@@ -46,7 +46,7 @@ book::book(int ISBN,int page, string BookName,string Author,calendar pbdat){
     	        return tp;
     }
 
-    void book::displayBook(){
+    void book::displayBook(){				// display book information [ISBN, page amount, title, author name, publishing date, book amount, borrow time, return time].
 
             cout<< "The ISBN of the book is: "<<ISBN<<endl;
             cout<< "The page of the book is: "<<page<<endl;
@@ -60,7 +60,7 @@ book::book(int ISBN,int page, string BookName,string Author,calendar pbdat){
             cout<< endl;
         }
 
-    void book::showBookinfo(){
+    void book::showBookinfo(){				// display book information [ISBN, page amount, title, author name, publishing date, book amount].
             cout<< "The ISBN of the book is: "<<ISBN<<endl;
             cout<< "The page of the book is: "<<page<<endl;
             cout<< "The name of the book is: "<<BookName<<endl;
@@ -69,7 +69,7 @@ book::book(int ISBN,int page, string BookName,string Author,calendar pbdat){
             cout<< "The number of the book is: "<<num<<endl;
         }
 
-   istream &operator>>(istream  & in,  book &x){
+   istream &operator>>(istream  & in,  book &x){	//Overload the input operator
        in>>x.ISBN>>x.page>>x.BookName>>x.Author>>x.pbdat;
        return in;
        }
