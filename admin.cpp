@@ -8,7 +8,7 @@
 #include "admin.h"
 
 admin::admin(){
-        password = "000000";
+        password = "000000";//default password
     }
 admin::admin(string password){
         this->password = password;
