@@ -31,7 +31,7 @@ void library::delBook(){
             cout<<"\n\nPlease enter the number of the book to be deleted:\n";
             int x;
             cin>>x;
-            b=books.begin()-1+x;
+            b=books.begin()-1+x;//books.begin() means that index start from 0, if I want to delete No.x of book, the index of elements should be x-1.
             b->showBookinfo();
             books.erase(b);
             cout<<"Delete book successfully!\n";
@@ -43,7 +43,7 @@ void library::delBook(){
            }
     }
     void library::searchBybookName(string name){
-        int found = 0;
+        int found = 0;//the "found" can seem as a flag. If the book not exist, it will be false. And the if sentence will tell user the book cannot be found.
         for(b=books.begin();b!=books.end();b++){
                 if (b->getBookName() == name){
                     found = 1;
@@ -84,13 +84,13 @@ void library::delBook(){
     	book b;
     	if (inFile1){
     		cout << "books.txt1 open scessful\n" << endl;
-    		while (inFile1>>b){
+    		while (inFile1>>b){//the process of putting the elements in vector.
     			books.push_back(b);
     		}
     		inFile1.close();
     	}
     	else
-    		cout << "books..txt doesn't exist\n" << endl;
+    		cout << "books..txt doesn't exist\n" << endl;//if the file cannot be found
         }
 
 
