@@ -39,7 +39,7 @@ user::user(int studentID, string name, string password){
      void user::setpassword(string password){
         this->password = password;
     }
-    bool user::isPassword(string x){
+    bool user::isPassword(string x){//if the x equals password, it will return true, else, false.
        return x==password;
     }
     void user::showUserInfo(){
@@ -48,9 +48,9 @@ user::user(int studentID, string name, string password){
         cout<<"Password: "<<password<<endl;
         cout<<"The number of book borrowed: "<<booknum<<endl;
     }
-    void user::borrowbook(library & lib,int x){
+    void user::borrowbook(library & lib,int x){//I add the reference of lib here. This method can directly change the booknum from the library.
         int num = (lib.books[x-1].getNum()-1);
-		if(num == -1){
+		if(num == -1){//if booknum-1 = -1, means that this book is empty in library.
 			cout<<"Library do not have enough book! You cannot borrow it!"<<endl;
 			return;
 		}
