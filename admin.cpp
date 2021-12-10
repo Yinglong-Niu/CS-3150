@@ -74,7 +74,7 @@ void admin::delUser(){
     bool admin::isPassword(string x){
        return x==password;
     }
-    bool admin::isUser(user U){
+    bool admin::isUser(user U){//if the input's name ID and password can be found in the user vector, it will return true.
         for(u=users.begin();u!=users.end();u++){
             if((u->getName()==U.getName())&&(u->getSID()==U.getSID())&&(U.isPassword(u->getpw()))){
                 return 1;
@@ -82,7 +82,7 @@ void admin::delUser(){
         }
         return 0;
     }
-    void admin::changePassword(user U, string x){
+    void admin::changePassword(user U, string x){//allow student to change password also change in user vector.
         for(u=users.begin();u!=users.end();u++){
             if(u->getName()==U.getName()){
                 u->setpassword(x);
