@@ -225,7 +225,7 @@
                 ui.borrowbook(lib, a);
                 for(am.u=am.users.begin();am.u!=am.users.end();am.u++){
                 if (am.u->getName() == ui.getName()){
-                    am.u->setnum(am.u->getnm()+1);
+                    am.u->setnum(am.u->getnm()+1);//to set the number of book that user borrowed in user vector.
                 }
             }
                 system("pause");
@@ -237,7 +237,7 @@
                 ui.returnbook(lib);
                 for(am.u=am.users.begin();am.u!=am.users.end();am.u++){
                 if (am.u->getName() == ui.getName()){
-                    am.u->setnum(am.u->getnm()-1);
+                    am.u->setnum(am.u->getnm()-1);//to set the number of book that user borrowed in user vector.
                 }
             }
                 system("pause");
