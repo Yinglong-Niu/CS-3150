@@ -31,6 +31,7 @@ void library::delBook(){
             cout<<"\n\nPlease enter the number of the book to be deleted:\n";
             int x;
             cin>>x;
+            //An iterator added to or subtracted from an integer returns an iterator, similar to a pointer added to an integer, pointing to a different position.
             b=books.begin()-1+x;//books.begin() means that index start from 0, if I want to delete No.x of book, the index of elements should be x-1.
             b->showBookinfo();
             books.erase(b);
@@ -84,6 +85,9 @@ void library::delBook(){
     	book b;
     	if (inFile1){
     		cout << "books.txt1 open scessful\n" << endl;
+      // When had overload the input operator in class book, so we can diractly input the object of class book.
+      // After process the input, the overloaded method would return an istream reference.
+      // If the returned reference is NULL, it is equivalent to false.
     		while (inFile1>>b){//the process of putting the elements in vector.
     			books.push_back(b);
     		}
