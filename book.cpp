@@ -46,7 +46,7 @@ book::book(int ISBN,int page, string BookName,string Author,calendar pbdat){	// 
     	        return tp;
     }
 
-    void book::displayBook(){				// display book information [ISBN, page amount, title, author name, publishing date, book amount, borrow time, return time].
+    void book::displayBook(){				//This method is designed for user because it can print borrow time and return time.
 
             cout<< "The ISBN of the book is: "<<ISBN<<endl;
             cout<< "The page of the book is: "<<page<<endl;
@@ -60,7 +60,7 @@ book::book(int ISBN,int page, string BookName,string Author,calendar pbdat){	// 
             cout<< endl;
         }
 
-    void book::showBookinfo(){				// display book information [ISBN, page amount, title, author name, publishing date, book amount].
+    void book::showBookinfo(){				// This method just prints all the information of the books.
             cout<< "The ISBN of the book is: "<<ISBN<<endl;
             cout<< "The page of the book is: "<<page<<endl;
             cout<< "The name of the book is: "<<BookName<<endl;
