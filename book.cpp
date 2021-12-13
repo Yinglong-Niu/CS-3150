@@ -32,7 +32,7 @@ book::book(int ISBN,int page, string BookName,string Author,calendar pbdat){	// 
     void book::setNum(int num){this->num=num;}		// set book number
 
     string book::getCurrentTime(){			// get current time
-        time_t t = time(0);
+        time_t t = time(0);				//Reference:https://blog.csdn.net/wghnyist/article/details/17250365
         char tp[11];
         strftime(tp,sizeof(tp),"%Y %m %d",localtime(&t));
         return tp;
