@@ -22,12 +22,13 @@ calendar::calendar(int yr, int mon,int day)
             		this->day = day;
 		}
 				// Overload the input operator
-         istream &operator>>(istream  & in,  calendar &x){
+         istream &operator>>(istream  & in,  calendar &x)//Reference:https://www.runoob.com/cplusplus/input-output-operators-overloading.html
+	 { 
        		in>>x.yr>>x.mon>>x.day;
       		return in;	// Support continuous reading
        }
 				// Overload the output operator
-         ostream &operator<<( ostream &output, const calendar &x )
+         ostream &operator<<( ostream &output, const calendar &x )//Reference:https://www.runoob.com/cplusplus/input-output-operators-overloading.html
       {
          	output<<x.yr<<" "<<x.mon<<" "<<x.day;
          	return output;	// Support continuous output
